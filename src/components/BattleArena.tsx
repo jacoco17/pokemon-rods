@@ -81,7 +81,7 @@ const BattleArena: React.FC = () => {
 
   const fetchTeam = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/team');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/team`);
       const teamData = await Promise.all(
         response.data.map(async (pokemon: { pokemonId: number, id: number }) => {
           const pokemonResponse = await axios.get(
@@ -161,7 +161,7 @@ const BattleArena: React.FC = () => {
     setBattleResult(result);
 
     // Save battle result
-    axios.post('http://localhost:3001/battles', {
+    axios.post('https://pokemon-backend-hd4h.onrender.com/battles', {
       pokemon1: selectedPokemon1.name,
       pokemon2: selectedPokemon2.name,
       winner,

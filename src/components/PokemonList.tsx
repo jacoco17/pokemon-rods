@@ -79,7 +79,7 @@ const PokemonList: React.FC = () => {
 
   const addToTeam = async (pokemon: Pokemon) => {
     try {
-      const response = await axios.get('http://localhost:3001/team');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/team`);
       if (response.data.length >= 6) {
         toast({
           title: 'Team is full',
@@ -104,7 +104,7 @@ const PokemonList: React.FC = () => {
         return;
       }
 
-      await axios.post('http://localhost:3001/team', {
+      await axios.post('https://pokemon-backend-hd4h.onrender.com/team', {
         pokemonId: pokemon.id,
         name: pokemon.name,
         timestamp: new Date().toISOString(),

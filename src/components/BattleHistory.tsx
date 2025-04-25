@@ -57,7 +57,7 @@ const BattleHistory: React.FC = () => {
 
   const fetchBattles = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/battles');
+      const response = await axios.get('https://pokemon-backend-hd4h.onrender.com/battles');
       setBattles(response.data.reverse()); // Show newest battles first
       setLoading(false);
     } catch (error) {
@@ -72,7 +72,7 @@ const BattleHistory: React.FC = () => {
       // Delete battles one by one to avoid overwhelming the server
       for (const battle of battles) {
         try {
-          await axios.delete(`http://localhost:3001/battles/${battle.id}`);
+          await axios.delete(`https://pokemon-backend-hd4h.onrender.com/battles/${battle.id}`);
         } catch (error) {
           console.error(`Error deleting battle ${battle.id}:`, error);
           throw error; // Re-throw to trigger the outer catch block

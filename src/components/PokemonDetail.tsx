@@ -70,7 +70,7 @@ const PokemonDetail: React.FC = () => {
 
   const addToTeam = async () => {
     try {
-      await axios.post('http://localhost:3001/team', {
+      await axios.post('https://pokemon-backend-hd4h.onrender.com/team', {
         pokemonId: pokemon?.id,
         name: pokemon?.name,
         timestamp: new Date().toISOString(),

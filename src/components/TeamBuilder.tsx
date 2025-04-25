@@ -39,7 +39,7 @@ const TeamBuilder: React.FC = () => {
 
   const fetchTeam = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/team');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/team`);
       const teamData = await Promise.all(
         response.data.map(async (pokemon: { pokemonId: number, id: number }) => {
           const pokemonResponse = await axios.get(
@@ -61,7 +61,7 @@ const TeamBuilder: React.FC = () => {
 
   const removeFromTeam = async (teamId: number) => {
     try {
-      await axios.delete(`http://localhost:3001/team/${teamId}`);
+      await axios.delete(`https://pokemon-backend-hd4h.onrender.com/team/${teamId}`);
       setTeam(team.filter((p) => p.teamId !== teamId));
       toast({
         title: 'Pokémon removed from team',
