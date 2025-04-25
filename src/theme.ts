@@ -1,16 +1,15 @@
-import { extendTheme, type ThemeConfig } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
 
-const config: ThemeConfig = {
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
-};
-
-const theme = extendTheme({
+export const theme = extendTheme({
+  fonts: {
+    heading: "'Poppins', sans-serif",
+    body: "'Poppins', sans-serif",
+  },
   styles: {
     global: {
       body: {
         bg: 'gray.900',
-        color: 'whiteAlpha.900',
+        color: 'white',
       },
     },
   },
@@ -18,65 +17,38 @@ const theme = extendTheme({
     Card: {
       baseStyle: {
         container: {
-          background: 'rgba(18, 18, 18, 0.8)',
-          backdropFilter: 'blur(8px)',
-          borderRadius: '12px',
-          border: '1px solid rgba(255, 255, 255, 0.05)',
-          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-          transition: 'all 0.3s ease',
+          bg: 'whiteAlpha.200',
+          backdropFilter: 'blur(10px)',
+          borderRadius: 'xl',
+          boxShadow: 'xl',
+          transition: 'transform 0.2s',
           _hover: {
-            transform: 'translateY(-4px)',
-            boxShadow: '0 6px 40px rgba(0, 0, 0, 0.2)',
+            transform: 'scale(1.02)',
           },
         },
-      },
-    },
-    Button: {
-      baseStyle: {
-        fontWeight: '500',
-        borderRadius: '8px',
-        transition: 'all 0.3s ease',
-      },
-      variants: {
-        solid: {
-          bg: 'whiteAlpha.100',
-          _hover: {
-            bg: 'whiteAlpha.200',
-          },
-          _active: {
-            bg: 'whiteAlpha.300',
-          },
-        },
-        ghost: {
-          _hover: {
-            bg: 'whiteAlpha.100',
-          },
-        },
-      },
-    },
-    Input: {
-      variants: {
-        filled: {
-          field: {
-            bg: 'whiteAlpha.50',
-            border: '2px solid',
-            borderColor: 'whiteAlpha.100',
-            _hover: {
-              bg: 'whiteAlpha.100',
-            },
-            _focus: {
-              borderColor: 'whiteAlpha.200',
-              bg: 'whiteAlpha.100',
-            },
-          },
-        },
-      },
-      defaultProps: {
-        variant: 'filled',
       },
     },
   },
-  config,
-});
-
-export default theme; 
+  colors: {
+    pokemon: {
+      fire: '#F08030',
+      water: '#6890F0',
+      grass: '#78C850',
+      electric: '#F8D030',
+      psychic: '#F85888',
+      ice: '#98D8D8',
+      dragon: '#7038F8',
+      dark: '#705848',
+      fairy: '#EE99AC',
+      normal: '#A8A878',
+      fighting: '#C03028',
+      flying: '#A890F0',
+      poison: '#A040A0',
+      ground: '#E0C068',
+      rock: '#B8A038',
+      bug: '#A8B820',
+      ghost: '#705898',
+      steel: '#B8B8D0',
+    },
+  },
+}); 

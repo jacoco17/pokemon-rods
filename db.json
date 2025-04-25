@@ -1,416 +1,222 @@
 {
   "team": [
     {
-      "pokemonId": 2,
-      "name": "ivysaur",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
-      "types": [
-        {
-          "slot": 1,
-          "type": {
-            "name": "grass",
-            "url": "https://pokeapi.co/api/v2/type/12/"
-          }
-        },
-        {
-          "slot": 2,
-          "type": {
-            "name": "poison",
-            "url": "https://pokeapi.co/api/v2/type/4/"
-          }
-        }
-      ],
-      "stats": [
-        {
-          "base_stat": 60,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 62,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 63,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 80,
-          "effort": 1,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 80,
-          "effort": 1,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 60,
-          "effort": 0,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ],
+      "pokemonId": 1,
+      "name": "bulbasaur",
+      "timestamp": "2025-04-25T00:45:56.528Z",
       "id": 2
     },
     {
-      "pokemonId": 3,
-      "name": "venusaur",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-      "types": [
-        {
-          "slot": 1,
-          "type": {
-            "name": "grass",
-            "url": "https://pokeapi.co/api/v2/type/12/"
-          }
-        },
-        {
-          "slot": 2,
-          "type": {
-            "name": "poison",
-            "url": "https://pokeapi.co/api/v2/type/4/"
-          }
-        }
-      ],
-      "stats": [
-        {
-          "base_stat": 80,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 82,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 83,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 100,
-          "effort": 2,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 100,
-          "effort": 1,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 80,
-          "effort": 0,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ],
-      "id": 5
-    },
-    {
-      "pokemonId": 6,
-      "name": "charizard",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-      "types": [
-        {
-          "slot": 1,
-          "type": {
-            "name": "fire",
-            "url": "https://pokeapi.co/api/v2/type/10/"
-          }
-        },
-        {
-          "slot": 2,
-          "type": {
-            "name": "flying",
-            "url": "https://pokeapi.co/api/v2/type/3/"
-          }
-        }
-      ],
-      "stats": [
-        {
-          "base_stat": 78,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 84,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 78,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 109,
-          "effort": 3,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 85,
-          "effort": 0,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 100,
-          "effort": 0,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ],
-      "id": 6
-    },
-    {
-      "pokemonId": 5,
-      "name": "charmeleon",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
-      "types": [
-        {
-          "slot": 1,
-          "type": {
-            "name": "fire",
-            "url": "https://pokeapi.co/api/v2/type/10/"
-          }
-        }
-      ],
-      "stats": [
-        {
-          "base_stat": 58,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 64,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 58,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 80,
-          "effort": 1,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 65,
-          "effort": 0,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 80,
-          "effort": 1,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ],
-      "id": 7
-    },
-    {
-      "pokemonId": 10,
-      "name": "caterpie",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
-      "types": [
-        {
-          "slot": 1,
-          "type": {
-            "name": "bug",
-            "url": "https://pokeapi.co/api/v2/type/7/"
-          }
-        }
-      ],
-      "stats": [
-        {
-          "base_stat": 45,
-          "effort": 1,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 30,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 35,
-          "effort": 0,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 20,
-          "effort": 0,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 20,
-          "effort": 0,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 45,
-          "effort": 0,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ],
+      "pokemonId": 8,
+      "name": "wartortle",
+      "timestamp": "2025-04-25T01:04:41.614Z",
       "id": 8
     },
     {
       "pokemonId": 7,
       "name": "squirtle",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-      "types": [
-        {
-          "slot": 1,
-          "type": {
-            "name": "water",
-            "url": "https://pokeapi.co/api/v2/type/11/"
-          }
-        }
-      ],
-      "stats": [
-        {
-          "base_stat": 44,
-          "effort": 0,
-          "stat": {
-            "name": "hp",
-            "url": "https://pokeapi.co/api/v2/stat/1/"
-          }
-        },
-        {
-          "base_stat": 48,
-          "effort": 0,
-          "stat": {
-            "name": "attack",
-            "url": "https://pokeapi.co/api/v2/stat/2/"
-          }
-        },
-        {
-          "base_stat": 65,
-          "effort": 1,
-          "stat": {
-            "name": "defense",
-            "url": "https://pokeapi.co/api/v2/stat/3/"
-          }
-        },
-        {
-          "base_stat": 50,
-          "effort": 0,
-          "stat": {
-            "name": "special-attack",
-            "url": "https://pokeapi.co/api/v2/stat/4/"
-          }
-        },
-        {
-          "base_stat": 64,
-          "effort": 0,
-          "stat": {
-            "name": "special-defense",
-            "url": "https://pokeapi.co/api/v2/stat/5/"
-          }
-        },
-        {
-          "base_stat": 43,
-          "effort": 0,
-          "stat": {
-            "name": "speed",
-            "url": "https://pokeapi.co/api/v2/stat/6/"
-          }
-        }
-      ],
+      "timestamp": "2025-04-25T01:04:42.493Z",
       "id": 9
+    },
+    {
+      "pokemonId": 44,
+      "name": "gloom",
+      "timestamp": "2025-04-25T01:17:35.732Z",
+      "id": 10
+    },
+    {
+      "pokemonId": 9,
+      "name": "blastoise",
+      "timestamp": "2025-04-25T02:17:49.783Z",
+      "id": 11
+    },
+    {
+      "pokemonId": 10,
+      "name": "caterpie",
+      "timestamp": "2025-04-25T02:17:52.756Z",
+      "id": 12
     }
   ],
-  "battles": []
+  "battles": [
+    {
+      "pokemon1": "bulbasaur",
+      "pokemon2": "caterpie",
+      "winner": "bulbasaur",
+      "timestamp": "2025-04-25T01:10:36.052Z",
+      "battleDetails": [
+        {
+          "stat": "hp",
+          "pokemon1Value": 45,
+          "pokemon2Value": 45,
+          "winner": "tie"
+        },
+        {
+          "stat": "attack",
+          "pokemon1Value": 49,
+          "pokemon2Value": 30,
+          "winner": "bulbasaur"
+        },
+        {
+          "stat": "defense",
+          "pokemon1Value": 49,
+          "pokemon2Value": 35,
+          "winner": "bulbasaur"
+        },
+        {
+          "stat": "speed",
+          "pokemon1Value": 45,
+          "pokemon2Value": 45,
+          "winner": "tie"
+        },
+        {
+          "stat": "special-attack",
+          "pokemon1Value": 65,
+          "pokemon2Value": 20,
+          "winner": "bulbasaur"
+        },
+        {
+          "stat": "special-defense",
+          "pokemon1Value": 65,
+          "pokemon2Value": 20,
+          "winner": "bulbasaur"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "pokemon1": "venusaur",
+      "pokemon2": "exeggutor",
+      "winner": "exeggutor",
+      "timestamp": "2025-04-25T01:10:45.973Z",
+      "battleDetails": [
+        {
+          "stat": "hp",
+          "pokemon1Value": 80,
+          "pokemon2Value": 95,
+          "winner": "exeggutor"
+        },
+        {
+          "stat": "attack",
+          "pokemon1Value": 82,
+          "pokemon2Value": 95,
+          "winner": "exeggutor"
+        },
+        {
+          "stat": "defense",
+          "pokemon1Value": 83,
+          "pokemon2Value": 85,
+          "winner": "exeggutor"
+        },
+        {
+          "stat": "speed",
+          "pokemon1Value": 80,
+          "pokemon2Value": 55,
+          "winner": "venusaur"
+        },
+        {
+          "stat": "special-attack",
+          "pokemon1Value": 100,
+          "pokemon2Value": 125,
+          "winner": "exeggutor"
+        },
+        {
+          "stat": "special-defense",
+          "pokemon1Value": 100,
+          "pokemon2Value": 75,
+          "winner": "venusaur"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "pokemon1": "charmander",
+      "pokemon2": "seadra",
+      "winner": "seadra",
+      "timestamp": "2025-04-25T01:18:40.355Z",
+      "battleDetails": [
+        {
+          "stat": "hp",
+          "pokemon1Value": 39,
+          "pokemon2Value": 55,
+          "winner": "seadra"
+        },
+        {
+          "stat": "attack",
+          "pokemon1Value": 52,
+          "pokemon2Value": 65,
+          "winner": "seadra"
+        },
+        {
+          "stat": "defense",
+          "pokemon1Value": 43,
+          "pokemon2Value": 95,
+          "winner": "seadra"
+        },
+        {
+          "stat": "speed",
+          "pokemon1Value": 65,
+          "pokemon2Value": 85,
+          "winner": "seadra"
+        },
+        {
+          "stat": "special-attack",
+          "pokemon1Value": 60,
+          "pokemon2Value": 95,
+          "winner": "seadra"
+        },
+        {
+          "stat": "special-defense",
+          "pokemon1Value": 50,
+          "pokemon2Value": 45,
+          "winner": "charmander"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "pokemon1": "bulbasaur",
+      "pokemon2": "pidgeotto",
+      "winner": "pidgeotto",
+      "timestamp": "2025-04-25T10:16:49.312Z",
+      "battleDetails": [
+        {
+          "stat": "hp",
+          "pokemon1Value": 45,
+          "pokemon2Value": 63,
+          "winner": "pidgeotto"
+        },
+        {
+          "stat": "attack",
+          "pokemon1Value": 49,
+          "pokemon2Value": 60,
+          "winner": "pidgeotto"
+        },
+        {
+          "stat": "defense",
+          "pokemon1Value": 49,
+          "pokemon2Value": 55,
+          "winner": "pidgeotto"
+        },
+        {
+          "stat": "speed",
+          "pokemon1Value": 45,
+          "pokemon2Value": 71,
+          "winner": "pidgeotto"
+        },
+        {
+          "stat": "special-attack",
+          "pokemon1Value": 65,
+          "pokemon2Value": 50,
+          "winner": "bulbasaur"
+        },
+        {
+          "stat": "special-defense",
+          "pokemon1Value": 65,
+          "pokemon2Value": 50,
+          "winner": "bulbasaur"
+        }
+      ],
+      "id": 4
+    }
+  ]
 }

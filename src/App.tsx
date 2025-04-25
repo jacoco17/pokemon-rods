@@ -1,25 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Container } from '@chakra-ui/react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, createRoutesFromElements } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import PokemonList from './components/PokemonList';
 import PokemonDetail from './components/PokemonDetail';
 import TeamBuilder from './components/TeamBuilder';
-import Battle from './components/Battle';
-import Navigation from './components/Navigation';
+import BattleArena from './components/BattleArena';
+import { Box } from '@chakra-ui/react';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <Router>
-      <Container maxW="container.xl" py={5}>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<PokemonList />} />
-          <Route path="/pokemon/:id" element={<PokemonDetail />} />
-          <Route path="/team" element={<TeamBuilder />} />
-          <Route path="/battle" element={<Battle />} />
-        </Routes>
-      </Container>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Box minH="100vh" bgGradient="linear(to-b, blue.900, purple.900)">
+        <Navbar />
+        <Box p={4}>
+          <Routes>
+            <Route path="/" element={<PokemonList />} />
+            <Route path="/pokemon/:id" element={<PokemonDetail />} />
+            <Route path="/team" element={<TeamBuilder />} />
+            <Route path="/battle" element={<BattleArena />} />
+          </Routes>
+        </Box>
+      </Box>
     </Router>
   );
-}
+};
 
 export default App; 

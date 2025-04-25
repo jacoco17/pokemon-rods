@@ -1,57 +1,36 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
-  Container,
-  Grid,
-  Text,
+  SimpleGrid,
+  Card,
+  CardBody,
   Image,
-  Button,
-  useToast,
-  Center,
-  Spinner,
-  VStack,
-  HStack,
+  Text,
   Badge,
   Flex,
+  Button,
+  useToast,
+  Heading,
 } from '@chakra-ui/react';
+import axios from 'axios';
 
 interface TeamPokemon {
-  id: number;
-  pokemonId: number;
+  id: number;  // This is the Pokemon's ID from PokeAPI
+  teamId: number;  // This will store the unique team entry ID
   name: string;
-  image: string;
-  types: { type: { name: string } }[];
-  stats: { base_stat: number; stat: { name: string } }[];
+  sprites: {
+    front_default: string;
+  };
+  types: {
+    type: {
+      name: string;
+    };
+  }[];
 }
 
-const typeColors: { [key: string]: string } = {
-  normal: '#A8A878',
-  fire: '#F08030',
-  water: '#6890F0',
-  electric: '#F8D030',
-  grass: '#78C850',
-  ice: '#98D8D8',
-  fighting: '#C03028',
-  poison: '#A040A0',
-  ground: '#E0C068',
-  flying: '#A890F0',
-  psychic: '#F85888',
-  bug: '#A8B820',
-  rock: '#B8A038',
-  ghost: '#705898',
-  dragon: '#7038F8',
-  dark: '#705848',
-  steel: '#B8B8D0',
-  fairy: '#EE99AC',
-};
-
-const CARDS_PER_PAGE = 6;
-
-const TeamBuilder = () => {
+const TeamBuilder: React.FC = () => {
   const [team, setTeam] = useState<TeamPokemon[]>([]);
   const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
   const toast = useToast();
 
   useEffect(() => {
@@ -59,39 +38,40 @@ const TeamBuilder = () => {
   }, []);
 
   const fetchTeam = async () => {
-    setLoading(true);
     try {
-      const response = await axios.get('/api/team');
-      setTeam(response.data);
+      const response = await axios.get('http://localhost:3001/team');
+      const teamData = await Promise.all(
+        response.data.map(async (pokemon: { pokemonId: number, id: number }) => {
+          const pokemonResponse = await axios.get(
+            `https://pokeapi.co/api/v2/pokemon/${pokemon.pokemonId}`
+          );
+          return {
+            ...pokemonResponse.data,
+            teamId: pokemon.id  // Store the unique team entry ID
+          };
+        })
+      );
+      setTeam(teamData);
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching team:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to fetch your team',
-        status: 'error',
-        duration: 3000,
-        isClosable: true,
-      });
+      setLoading(false);
     }
-    setLoading(false);
   };
 
-  const removeFromTeam = async (id: number) => {
+  const removeFromTeam = async (teamId: number) => {
     try {
-      await axios.delete(`/api/team/${id}`);
-      setTeam(team.filter((pokemon) => pokemon.id !== id));
+      await axios.delete(`http://localhost:3001/team/${teamId}`);
+      setTeam(team.filter((p) => p.teamId !== teamId));
       toast({
-        title: 'Success',
-        description: 'Pokemon removed from team',
+        title: 'Pokémon removed from team',
         status: 'success',
         duration: 3000,
         isClosable: true,
       });
     } catch (error) {
-      console.error('Error removing from team:', error);
       toast({
-        title: 'Error',
-        description: 'Failed to remove Pokemon from team',
+        title: 'Error removing Pokémon from team',
         status: 'error',
         duration: 3000,
         isClosable: true,
@@ -99,132 +79,69 @@ const TeamBuilder = () => {
     }
   };
 
-  const capitalizeFirstLetter = (string: string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
-
-  const totalPages = Math.ceil(team.length / CARDS_PER_PAGE);
-  const startIndex = (currentPage - 1) * CARDS_PER_PAGE;
-  const endIndex = startIndex + CARDS_PER_PAGE;
-  const currentTeam = team.slice(startIndex, endIndex);
-
   if (loading) {
-    return (
-      <Center h="50vh">
-        <Spinner size="xl" color="whiteAlpha.900" />
-      </Center>
-    );
+    return <Text>Loading team...</Text>;
   }
 
   return (
-    <Container maxW="container.xl" py={8}>
-      <VStack spacing={8} align="stretch">
-        <Text
-          fontSize="3xl"
-          fontWeight="bold"
-          textAlign="center"
-          bgGradient="linear(135deg, #00f2fe 0%, #4facfe 100%)"
-          bgClip="text"
-        >
-          My Team
+    <Box maxW="1200px" mx="auto" px={4}>
+      <Heading mb={6} textAlign="center">
+        My Pokémon Team
+      </Heading>
+      {team.length === 0 ? (
+        <Text textAlign="center" fontSize="xl">
+          Your team is empty. Add Pokémon from the Pokédex!
         </Text>
-
-        {team.length === 0 ? (
-          <Center>
-            <Text fontSize="xl" color="whiteAlpha.800">
-              Your team is empty. Add Pokemon from the Pokemon list!
-            </Text>
-          </Center>
-        ) : (
-          <>
-            <Grid
-              templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
-              gap={6}
+      ) : (
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={6}>
+          {team.map((pokemon) => (
+            <Card
+              key={pokemon.teamId}
+              bg="whiteAlpha.200"
+              backdropFilter="blur(10px)"
             >
-              {currentTeam.map((pokemon) => (
-                <Box
-                  key={pokemon.id}
-                  bg="rgba(18, 18, 18, 0.8)"
-                  borderRadius="12px"
-                  p={6}
-                  boxShadow="0 4px 30px rgba(0, 0, 0, 0.1)"
-                  backdropFilter="blur(8px)"
-                  border="1px solid rgba(255, 255, 255, 0.05)"
+              <CardBody>
+                <Image
+                  src={pokemon.sprites.front_default}
+                  alt={pokemon.name}
+                  mx="auto"
+                  h="200px"
+                  objectFit="contain"
+                />
+                <Text
+                  fontSize="xl"
+                  fontWeight="bold"
+                  textTransform="capitalize"
+                  textAlign="center"
+                  mt={4}
                 >
-                  <VStack spacing={4} align="stretch">
-                    <Center>
-                      <Image
-                        src={pokemon.image}
-                        alt={pokemon.name}
-                        boxSize="150px"
-                        objectFit="contain"
-                      />
-                    </Center>
-
-                    <Text
-                      fontSize="2xl"
-                      fontWeight="bold"
-                      textAlign="center"
-                      color="whiteAlpha.900"
-                    >
-                      {capitalizeFirstLetter(pokemon.name)}
-                    </Text>
-
-                    <HStack justify="center" spacing={2}>
-                      {pokemon.types?.map((type) => (
-                        <Badge
-                          key={type.type.name}
-                          px={3}
-                          py={1}
-                          bg={typeColors[type.type.name] || '#777'}
-                          color="white"
-                          fontSize="md"
-                        >
-                          {capitalizeFirstLetter(type.type.name)}
-                        </Badge>
-                      ))}
-                    </HStack>
-
-                    <Button
-                      colorScheme="red"
-                      onClick={() => removeFromTeam(pokemon.id)}
-                      mt={4}
-                      color="white"
-                    >
-                      Remove from Team
-                    </Button>
-                  </VStack>
-                </Box>
-              ))}
-            </Grid>
-
-            {totalPages > 1 && (
-              <Flex justify="center" mt={8} gap={2}>
-                <Button
-                  onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                  isDisabled={currentPage === 1}
-                  colorScheme="blue"
-                  variant="outline"
-                >
-                  Previous
-                </Button>
-                <Text color="whiteAlpha.900">
-                  Page {currentPage} of {totalPages}
+                  {pokemon.name}
                 </Text>
+                <Flex justify="center" gap={2} mt={2}>
+                  {pokemon.types.map((type) => (
+                    <Badge
+                      key={type.type.name}
+                      colorScheme={type.type.name}
+                      variant="solid"
+                    >
+                      {type.type.name}
+                    </Badge>
+                  ))}
+                </Flex>
                 <Button
-                  onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                  isDisabled={currentPage === totalPages}
-                  colorScheme="blue"
-                  variant="outline"
+                  colorScheme="red"
+                  mt={4}
+                  w="full"
+                  onClick={() => removeFromTeam(pokemon.teamId)}
                 >
-                  Next
+                  Remove from Team
                 </Button>
-              </Flex>
-            )}
-          </>
-        )}
-      </VStack>
-    </Container>
+              </CardBody>
+            </Card>
+          ))}
+        </SimpleGrid>
+      )}
+    </Box>
   );
 };
 
