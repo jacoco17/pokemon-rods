@@ -1,0 +1,222 @@
+{
+  "team": [
+    {
+      "pokemonId": 1,
+      "name": "bulbasaur",
+      "timestamp": "2025-04-25T00:45:56.528Z",
+      "id": 2
+    },
+    {
+      "pokemonId": 8,
+      "name": "wartortle",
+      "timestamp": "2025-04-25T01:04:41.614Z",
+      "id": 8
+    },
+    {
+      "pokemonId": 7,
+      "name": "squirtle",
+      "timestamp": "2025-04-25T01:04:42.493Z",
+      "id": 9
+    },
+    {
+      "pokemonId": 44,
+      "name": "gloom",
+      "timestamp": "2025-04-25T01:17:35.732Z",
+      "id": 10
+    },
+    {
+      "pokemonId": 9,
+      "name": "blastoise",
+      "timestamp": "2025-04-25T02:17:49.783Z",
+      "id": 11
+    },
+    {
+      "pokemonId": 10,
+      "name": "caterpie",
+      "timestamp": "2025-04-25T02:17:52.756Z",
+      "id": 12
+    }
+  ],
+  "battles": [
+    {
+      "pokemon1": "bulbasaur",
+      "pokemon2": "caterpie",
+      "winner": "bulbasaur",
+      "timestamp": "2025-04-25T01:10:36.052Z",
+      "battleDetails": [
+        {
+          "stat": "hp",
+          "pokemon1Value": 45,
+          "pokemon2Value": 45,
+          "winner": "tie"
+        },
+        {
+          "stat": "attack",
+          "pokemon1Value": 49,
+          "pokemon2Value": 30,
+          "winner": "bulbasaur"
+        },
+        {
+          "stat": "defense",
+          "pokemon1Value": 49,
+          "pokemon2Value": 35,
+          "winner": "bulbasaur"
+        },
+        {
+          "stat": "speed",
+          "pokemon1Value": 45,
+          "pokemon2Value": 45,
+          "winner": "tie"
+        },
+        {
+          "stat": "special-attack",
+          "pokemon1Value": 65,
+          "pokemon2Value": 20,
+          "winner": "bulbasaur"
+        },
+        {
+          "stat": "special-defense",
+          "pokemon1Value": 65,
+          "pokemon2Value": 20,
+          "winner": "bulbasaur"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "pokemon1": "venusaur",
+      "pokemon2": "exeggutor",
+      "winner": "exeggutor",
+      "timestamp": "2025-04-25T01:10:45.973Z",
+      "battleDetails": [
+        {
+          "stat": "hp",
+          "pokemon1Value": 80,
+          "pokemon2Value": 95,
+          "winner": "exeggutor"
+        },
+        {
+          "stat": "attack",
+          "pokemon1Value": 82,
+          "pokemon2Value": 95,
+          "winner": "exeggutor"
+        },
+        {
+          "stat": "defense",
+          "pokemon1Value": 83,
+          "pokemon2Value": 85,
+          "winner": "exeggutor"
+        },
+        {
+          "stat": "speed",
+          "pokemon1Value": 80,
+          "pokemon2Value": 55,
+          "winner": "venusaur"
+        },
+        {
+          "stat": "special-attack",
+          "pokemon1Value": 100,
+          "pokemon2Value": 125,
+          "winner": "exeggutor"
+        },
+        {
+          "stat": "special-defense",
+          "pokemon1Value": 100,
+          "pokemon2Value": 75,
+          "winner": "venusaur"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "pokemon1": "charmander",
+      "pokemon2": "seadra",
+      "winner": "seadra",
+      "timestamp": "2025-04-25T01:18:40.355Z",
+      "battleDetails": [
+        {
+          "stat": "hp",
+          "pokemon1Value": 39,
+          "pokemon2Value": 55,
+          "winner": "seadra"
+        },
+        {
+          "stat": "attack",
+          "pokemon1Value": 52,
+          "pokemon2Value": 65,
+          "winner": "seadra"
+        },
+        {
+          "stat": "defense",
+          "pokemon1Value": 43,
+          "pokemon2Value": 95,
+          "winner": "seadra"
+        },
+        {
+          "stat": "speed",
+          "pokemon1Value": 65,
+          "pokemon2Value": 85,
+          "winner": "seadra"
+        },
+        {
+          "stat": "special-attack",
+          "pokemon1Value": 60,
+          "pokemon2Value": 95,
+          "winner": "seadra"
+        },
+        {
+          "stat": "special-defense",
+          "pokemon1Value": 50,
+          "pokemon2Value": 45,
+          "winner": "charmander"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "pokemon1": "bulbasaur",
+      "pokemon2": "pidgeotto",
+      "winner": "pidgeotto",
+      "timestamp": "2025-04-25T10:16:49.312Z",
+      "battleDetails": [
+        {
+          "stat": "hp",
+          "pokemon1Value": 45,
+          "pokemon2Value": 63,
+          "winner": "pidgeotto"
+        },
+        {
+          "stat": "attack",
+          "pokemon1Value": 49,
+          "pokemon2Value": 60,
+          "winner": "pidgeotto"
+        },
+        {
+          "stat": "defense",
+          "pokemon1Value": 49,
+          "pokemon2Value": 55,
+          "winner": "pidgeotto"
+        },
+        {
+          "stat": "speed",
+          "pokemon1Value": 45,
+          "pokemon2Value": 71,
+          "winner": "pidgeotto"
+        },
+        {
+          "stat": "special-attack",
+          "pokemon1Value": 65,
+          "pokemon2Value": 50,
+          "winner": "bulbasaur"
+        },
+        {
+          "stat": "special-defense",
+          "pokemon1Value": 65,
+          "pokemon2Value": 50,
+          "winner": "bulbasaur"
+        }
+      ],
+      "id": 4
+    }
+  ]
+}
